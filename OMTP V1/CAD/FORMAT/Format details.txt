@@ -1,0 +1,85 @@
+CAD/
+├── README.md                    ← part-number scheme, units (mm), CAD version, who owns what
+├── OSCAR_V3_TOP.asm             ← top-level assembly (references the subassemblies only)
+│
+├── 00_Reference/                ← vendor models, never edited
+│   ├── NEMA23_57HS112.step
+│   ├── MGN12_350_Rail.step
+│   ├── MGN12H_Carriage.step
+│   ├── GT2_20T_Toothed.step
+│   ├── GT2_20T_Idler_6mm.step
+│   ├── GT2_20T_Idler_10mm.step
+│   ├── AS5600_Module.step
+│   ├── RC_Shock_100mm.step
+│   ├── TB6600.step
+│   ├── ESP32_DevKit.step
+│   └── Paulin_Extension_Spring.step   ← simple placeholder geometry
+│
+├── 10_Frame/
+│   ├── 10-000_Frame.asm
+│   ├── 10-001_Base_Plate
+│   ├── 10-002_Fixed_Wall
+│   ├── 10-003_Hard_Stop_L
+│   ├── 10-004_Hard_Stop_R
+│   └── 10-005_Feet
+│
+├── 20_Drive/
+│   ├── 20-000_Drive.asm
+│   ├── 20-001_Motor_Mount
+│   ├── 20-002_Idler_Mount_Slotted      ← belt tensioning
+│   ├── 20-003_Moving_Wall              ← on MGN12H carriage
+│   ├── 20-004_Belt_Clamp
+│   └── 20-005_Rail_Riser
+│
+├── 30_Track/
+│   ├── 30-000_Track.asm
+│   ├── 30-001_Rail_Angle_Cut           ← 3/4" Al angle, cut length + hole pattern
+│   ├── 30-002_Height_Adjuster_Tread    ← the dial
+│   ├── 30-003_Rail_Carrier
+│   └── 30-004_Rail_Clamp
+│
+├── 40_Cart/
+│   ├── 40-000_Cart.asm
+│   ├── 40-001_Cart_Body
+│   ├── 40-002_Wheel_Axle_Block
+│   ├── 40-003_Ballast_Holder           ← adjustable mass
+│   ├── 40-004_Spring_Anchor_L
+│   ├── 40-005_Spring_Anchor_R
+│   ├── 40-006_Sensor_Belt_Clamp
+│   └── 40-007_Damper_Rod_Mount
+│
+├── 50_Sensor/
+│   ├── 50-000_Sensor_Loop.asm
+│   ├── 50-001_Encoder_Shaft_Housing    ← shaft, bearings, magnet
+│   ├── 50-002_AS5600_Bracket           ← sets the air gap
+│   ├── 50-003_Sensor_Idler_Mount
+│   └── 50-004_Sensor_Loop_Carrier      ← moves with the track height adjust
+│
+├── 60_Damper/
+│   ├── 60-000_Damper_Linkage.asm
+│   ├── 60-001_Lever_Arm_MultiHole      ← label each hole with its motion ratio
+│   ├── 60-002_Pivot_Block
+│   ├── 60-003_Pushrod
+│   ├── 60-004_Shock_Mount_Upper
+│   └── 60-005_Shock_Mount_Lower
+│
+├── 70_Electronics/
+│   ├── 70-000_Electronics.asm
+│   ├── 70-001_Electronics_Tray
+│   ├── 70-002_PSU_Mount
+│   ├── 70-003_Driver_Mount
+│   └── 70-004_Cable_Clips
+│
+├── 80_Drawings/                 ← PDFs for anything machined or hand-cut
+│   ├── 10-001_Base_Plate.pdf
+│   └── 30-001_Rail_Angle_Cut.pdf
+│
+├── 90_Exports/                  ← generated files only, never edited by hand
+│   ├── STL/                     ← one file per printed part, named by part number
+│   │   └── 40-001_Cart_Body_R02.stl
+│   ├── STEP/                    ← full assembly for sharing
+│   │   └── OSCAR_V3_TOP_R02.step
+│   └── DXF/                     ← laser or CNC profiles, if used
+│
+└── 99_Archive/                  ← superseded revisions, never deleted
+    └── 40-001_Cart_Body_R01
