@@ -78,7 +78,7 @@ X/X_in = k₁ / (m·s² + c·s + k₁ + k₂)        ω_n = √((k₁ + k₂)/m)
 │   │   ├── 40_Cart/                  Mass cart body, offset plate, wheel bushings, spring hooks, belt clamp
 │   │   ├── 50_Sensor/                AS5600 encoder mount, sensor belt loop and clamps
 │   │   ├── 60_Damper/                Copper damping plate, magnets and magnet holder
-│   │   ├── 70_Electronics/           (empty)
+│   │   ├── 70_Electronics/           Electrical box assembly, and wire management strap
 │   │   ├── 80_Drawings/              (empty)
 │   │   ├── 90_Exports/               Generated STL, STEP and DXF files
 │   │   ├── 99_Archive/               Superseded revisions
