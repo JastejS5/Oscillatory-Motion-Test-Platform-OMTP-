@@ -90,8 +90,6 @@ X/X_in = k₁ / (m·s² + c·s + k₁ + k₂)        ω_n = √((k₁ + k₂)/m)
 - **Software Requirements (Rev. 1.1):** firmware and UI requirements, analysis methods and calibration.
 - **Pinout diagram:** ESP32, TB6600 and AS5600 connections.
 
-All of these are in [`docs/`](docs/).
-
 ## Project status
 
 The mechanical design is complete. Build, firmware, UI and testing are in progress; measured results and video will be added as they come in.
