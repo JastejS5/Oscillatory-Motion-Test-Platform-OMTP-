@@ -79,7 +79,7 @@ X/X_in = k₁ / (m·s² + c·s + k₁ + k₂)        ω_n = √((k₁ + k₂)/m)
 
 ## Getting started
 
-1. **Build the hardware.** Order and print the parts in [`BOM/`](BOM/). The STL files are in [`CAD/`](CAD/), and wiring follows the pinout diagram in [`OMTPV1/`](Electrical/).
+1. **Build the hardware.** Order and print the parts in [`BOM/`](BOM/). The STL files are in [`CAD/`](CAD/), and wiring follows the pinout diagram in [`OMTP V1/`](Electrical/).
 2. **Flash the firmware.** Open the sketch in [`Code/firmware/`](Code/firmware/) with the Arduino IDE, install the listed libraries, and set the configuration block at the top of the sketch (microstepping, travel limit, mm-per-rev constants).
 3. **Run the UI.** Install the Python requirements in [`Code/ui/`](Code/ui/), connect to the ESP32's serial port, and start in free response mode.
 4. **Calibrate.** Follow the calibration section of the software requirements: motor and sensor travel per revolution, speed and acceleration limits, and phase delay.
