@@ -69,16 +69,44 @@ X/X_in = k₁ / (m·s² + c·s + k₁ + k₂)        ω_n = √((k₁ + k₂)/m)
 ## Repository structure
 
 ```
-├── BOM/            Bill of materials and sourcing
-├── CAD/            Native CAD, STEP and STL exports, drawings
-├── Code/
-│   ├── firmware/   ESP32 firmware (Arduino IDE)
-│   └── ui/         Python live-plotting and analysis UI
-└── docs/           Concept overview, software requirements, pinout, images
+├── OMTP V1/
+│   ├── CAD/                          SolidWorks parts and assemblies
+│   │   ├── 00_Reference/             Vendor and off-the-shelf models (NEMA 23, pulleys, idlers, MGN12 rail, angle, spring)
+│   │   ├── 10_Frame/                 Wooden base, base mounts, leveling screws and shelves, motor mount, top covers
+│   │   ├── 20_Drive/                 Drive belt, belt clamp, idler bushing, pulley tower, moving wall and its cart
+│   │   ├── 30_Track/                 (empty)
+│   │   ├── 40_Cart/                  Mass cart body, offset plate, wheel bushings, spring hooks, belt clamp
+│   │   ├── 50_Sensor/                AS5600 encoder mount, sensor belt loop and clamps
+│   │   ├── 60_Damper/                Copper damping plate, magnets and magnet holder
+│   │   ├── 70_Electronics/           (empty)
+│   │   ├── 80_Drawings/              (empty)
+│   │   ├── 90_Exports/               Generated STL, STEP and DXF files
+│   │   ├── 99_Archive/               Superseded revisions
+│   │   ├── 100_Main_Assembly/        Master_Assembly.SLDASM (top-level assembly)
+│   │   └── FORMAT/                   Planned folder and part-numbering scheme
+│   ├── Electrical/                   Wiring diagram
+│   ├── Firmware and code/            Software requirements (firmware and UI source to be added)
+│   ├── Parts, and Bill of Materials/ Bill of materials and concept overview
+│   └── _Archive_/                    Earlier concept and parts list
+└── docs/                             Renders and images for this README
 ```
 
 ## Getting started
 
+<<<<<<< HEAD
+1. **Open the CAD.** The top-level assembly is [`Master_Assembly.SLDASM`](OMTP%20V1/CAD/100_Main_Assembly/Master_Assembly.SLDASM), and each subsystem has its own folder under [`OMTP V1/CAD/`](OMTP%20V1/CAD/).
+2. **Build the hardware.** Order the parts in the [bill of materials](OMTP%20V1/Parts,%20and%20Bill%20of%20Materials/OSCAR_V3_BOM.pdf) and print the parts from [`90_Exports/STL/`](OMTP%20V1/CAD/90_Exports/STL/). Wire the electronics following the [wiring diagram](OMTP%20V1/Electrical/WiringDiagram_V2.drawio.pdf).
+3. **Flash the firmware** *(not yet published)*. The firmware will be an Arduino IDE sketch for the ESP32, with a configuration block at the top for microstepping, travel limit and mm-per-rev constants.
+4. **Run the UI** *(not yet published)*. The Python UI will connect to the ESP32's serial port, with free response as the first mode.
+5. **Calibrate.** Follow Section 7 of the [software requirements](OMTP%20V1/Firmware%20and%20code/OMTP_Software_Requirements%20updated.pdf): motor and sensor travel per revolution, speed and acceleration limits, and phase delay.
+
+## Documentation
+
+- **[Concept Overview (Rev. 3)](OMTP%20V1/Parts,%20and%20Bill%20of%20Materials/Oscillation_Rig_Concept_3.pdf):** architecture, subsystems, model and design constraints.
+- **[Software Requirements (Rev. 1.1)](OMTP%20V1/Firmware%20and%20code/OMTP_Software_Requirements%20updated.pdf)** ([.docx](OMTP%20V1/Firmware%20and%20code/OMTP_Software_Requirements%20updated.docx)): firmware and UI requirements, analysis methods and calibration.
+- **[Wiring diagram](OMTP%20V1/Electrical/WiringDiagram_V2.drawio.pdf):** ESP32, TB6600, stepper, AS5600 and power connections.
+- **[Bill of materials](OMTP%20V1/Parts,%20and%20Bill%20of%20Materials/OSCAR_V3_BOM.pdf)** ([.docx](OMTP%20V1/Parts,%20and%20Bill%20of%20Materials/OSCAR_V3_BOM.docx)): parts, suppliers and prices (CAD).
+=======
 1. **Build the hardware.** Order and print the parts in [`BOM/`](BOM/). The STL files are in [`CAD/`](CAD/), and wiring follows the pinout diagram in [`OMTP V1/`](Electrical/).
 2. **Flash the firmware.** Open the sketch in [`Code/firmware/`](Code/firmware/) with the Arduino IDE, install the listed libraries, and set the configuration block at the top of the sketch (microstepping, travel limit, mm-per-rev constants).
 3. **Run the UI.** Install the Python requirements in [`Code/ui/`](Code/ui/), connect to the ESP32's serial port, and start in free response mode.
@@ -89,6 +117,7 @@ X/X_in = k₁ / (m·s² + c·s + k₁ + k₂)        ω_n = √((k₁ + k₂)/m)
 - **Concept Overview (Rev. 3):** architecture, subsystems, model and design constraints.
 - **Software Requirements (Rev. 1.1):** firmware and UI requirements, analysis methods and calibration.
 - **Pinout diagram:** ESP32, TB6600 and AS5600 connections.
+>>>>>>> e5d7fddacd94af89a83e0e73e44755c76084904c
 
 ## Project status
 
@@ -113,6 +142,8 @@ The mechanical design is complete. Build, firmware, UI and testing are in progre
 Inspired by the OSCAR teaching rig used in a mechatronics modelling course at Simon Fraser University. OMTP is an independent design.
 
 ## License
+
+See [`LICENSE`](LICENSE).
 
 - **Hardware** (CAD, BOM, drawings): [CERN-OHL-P v2](https://ohwr.org/cern_ohl_p_v2.txt)
 - **Software** (firmware, UI): [MIT](https://opensource.org/licenses/MIT)
